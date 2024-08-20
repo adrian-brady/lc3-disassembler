@@ -4,15 +4,20 @@
 #include "chunk.h"
 #include "write.h"
 
-#define IN "biggest.obj"
+int main(int argc, char* argv[]) {
+    FILE* fp;
 
-
-
-int main() {
-    FILE* fp = fopen(IN, "rb");
-    if (!fp) {
+    if (argc != 2) {
+        printf("Usage: lc3dis <file>\n");
         exit(1);
     }
+
+    fp = fopen(argv[1], "rb");
+    if (!fp) {
+        printf("Error: Could not open file '%s'.", argv[1]);
+        exit(1);
+    }
+
 
     uint16_t chunk = 0;
 
