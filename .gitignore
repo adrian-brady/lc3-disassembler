@@ -1,0 +1,6 @@
+*.asm
+*.obj
+*.sym
+*.jar
+*.out
+*.o
